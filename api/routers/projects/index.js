@@ -1,10 +1,13 @@
 const express = require(`express`);
 
+const actionsRouter = require(`./actions`);
+
 const projectsDb = require(`../../../data/helpers/projectModel`);
 
 const router = express.Router();
 
 router.use(express.json());
+router.use(`/:id/actions`, validateId, actionsRouter);
 
 function validateId(req, res, next) {
   const id = req.params.id;
