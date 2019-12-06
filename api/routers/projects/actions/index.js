@@ -4,8 +4,6 @@ const actionsDb = require(`../../../../data/helpers/actionModel`);
 
 const router = express.Router();
 
-router.use(express.json());
-
 function validateActionId(req, res, next) {
   const id = req.params.actionId;
 
